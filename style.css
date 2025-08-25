@@ -142,6 +142,8 @@ nav .b2 {
 .line {
     height: 8px;
     background-color: #222;
+    position: relative;
+    z-index: 10;
 }
 
 .card {
@@ -149,13 +151,14 @@ nav .b2 {
     color: white;
     padding: 0px 26px;
     border-bottom: 8px solid #222;
+    padding-bottom: 50px;
 }
 
 .card .card1 {
     display: flex;
     margin: 0px auto;
     align-items: center;
-    max-width: 900px;
+    max-width: 1200px;
 }
 
 .card .text {
@@ -175,11 +178,92 @@ nav .b2 {
 
 .card .image {
     width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
 }
 
-.image img {
+.card .image img {
     width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 10;
 }
+
+.card .image video {
+    position: absolute;
+    top: 18%;
+    /* adjust depending on TV frame */
+    left: 13%;
+    width: 73%;
+    /* responsive scaling with TV */
+    height: 60%;
+    object-fit: cover;
+    z-index: 5;
+}
+
+.question {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 45px;
+}
+
+.question h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.question .faq {
+    margin: 52px auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.question .faq .btn {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 26px;
+    background-color: #303030;
+    border: 0;
+    padding: .8em 2.2em .8em 1.2em;
+    font-weight: 400;
+    width: 700px;
+    text-align: justify;
+    position: relative;
+    margin: 0px auto;
+}
+
+.plus {
+    position: absolute;
+    right: 4%;
+    top: 34%;
+}
+
+.membership {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.membership .p2 {
+    text-align: center;
+}
+
+.membership .box1 {
+    display: flex;
+}
+
 
 @media only screen and (max-width: 1420px) {
     .container h1 {
@@ -203,7 +287,6 @@ nav .b2 {
     .card1 {
         flex-direction: column;
         height: 100%;
-        gap: 20px
     }
 
     .text {
@@ -213,7 +296,7 @@ nav .b2 {
 
     .text h1 {
         font-size: 40px;
-        
+
     }
 
     .text h3 {
@@ -229,6 +312,11 @@ nav .b2 {
     .image img {
         width: 50%
     }
+
+    .question .faq .btn {
+        width: 100%;
+    }
+
 }
 
 @media only screen and (max-width: 960px) {
@@ -236,6 +324,12 @@ nav .b2 {
         width: 89px;
     }
 
+}
+
+@media only screen and (max-width: 744px) {
+    .question h1 {
+        font-size: 40px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -252,11 +346,28 @@ nav .b2 {
 
     .text h1 {
         font-size: 26px;
-        
+
     }
 
     .text h3 {
         font-size: 18px;
+    }
+
+}
+
+@media only screen and (max-width: 426px) {
+    .question h1 {
+        font-size: 28px;
+    }
+
+    .question .faq .btn {
+        font-size: 15px;
+    }
+
+    .plus {
+        width: 15px;
+        top: 24%;
+        right: 7%;
     }
 
 }
@@ -267,7 +378,6 @@ nav .b2 {
     }
 
 }
-
 
 @media only screen and (max-width: 324px) {
     nav img {
@@ -280,5 +390,21 @@ nav .b2 {
 
     .main input {
         width: 250px;
+    }
+
+    .question h1 {
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .question .faq .btn {
+        font-size: 10px;
+    }
+
+    .plus {
+        width: 12px;
+        top: 7%;
+        right: 5%;
     }
 }
